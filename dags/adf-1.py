@@ -27,8 +27,8 @@ dag = DAG(
 with dag:
   trigger_pipeline_task = AzureDataFactoryRunPipelineOperator(
      task_id='trigger_pipeline',
-     resource_group_name='adf-dataanalytics-dataplatform-dev-westeurope-adfst',
-     factory_name='adf-dataanalytics-dataplatform-dev-westeurope-bm',
+     resource_group_name='rg-dataanalytics-dataplatform-dev-westeurope-stsbx',
+     factory_name='adf-dataanalytics-dataplatform-dev-westeurope-adfst',
      azure_data_factory_conn_id = "azure_data_factory_conn", # Define your Azure Data Factory credentials
      trigger_rule='all_success',
      pipeline_name='Pl_airflow_test',

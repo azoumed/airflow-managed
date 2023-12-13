@@ -1,4 +1,4 @@
-rom airflow import DAG
+from airflow import DAG
 from airflow.operators.bash_operator import BashOperator
 from datetime import datetime
 from airflow.utils.dates import days_ago

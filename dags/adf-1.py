@@ -31,7 +31,7 @@ with dag:
      factory_name='adf-dataanalytics-dataplatform-dev-westeurope-bm',
      azure_data_factory_conn_id = "azure_data_factory_conn", # Define your Azure Data Factory credentials
      trigger_rule='all_success',
-     pipeline_name='Airflow_Test_1',
+     pipeline_name='Pl_airflow_test',
      dag=dag,
 )
 

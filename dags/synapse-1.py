@@ -28,8 +28,8 @@ dag = DAG(
 with dag:
   trigger_pipeline_task = AzureSynapseRunPipelineOperator(
      task_id='trigger_pipeline',
-     azure_synapse_workspace_dev_endpoint= ""
-     azure_synapse_conn_id = "azure_synapse_conn", # Define your Azure Data Factory credentials
+     azure_synapse_workspace_dev_endpoint= '',
+     azure_synapse_conn_id = 'azure_synapse_conn', # Define your Azure Data Factory credentials
      trigger_rule='all_success',
      pipeline_name='Pl_airflow_synapse_test',
      dag=dag,

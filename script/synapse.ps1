@@ -1,4 +1,3 @@
-az login --service-principal -u c4d83acd-d4fc-44f1-bd5b-28785a4526ee -p=-MI8Q~b6s_1qhTegidfHrhavOueT086ApTYiSaik --tenant e339bd4b-2e3b-4035-a452-2112d502f2ff
-az account set --subscription 3346c1ed-eede-443b-9e43-7c182df37616
-az synapse pipeline create-run --name PL_COPY_ADLS_sapavenirv2brz_to_sydpdpsek_uspraw --workspace-name sywsdpsekdevfrc --parameters "{ 'FolderPath': 'ini/KNA1/2021/09/27', 'FileName': 'SAP_sekurit_KNA1_PGT_20210927_173720_00001.csv', 'TableSchema': 'RAW_AVENIRV2', 'Storage': 'https://stdpseksapavenirv2curprd.dfs.core.windows.net/' }"
-az account set --subscription abbde1f5-eb70-4a6f-b6de-97bafd9c3787
+az login --service-principal -u f979e510-233c-4df4-bcb6-de42db1d374b -p=l3o8Q~h3-T1DRSPgVprVl1fHJnS4EEuAFKexgc12 --tenant e339bd4b-2e3b-4035-a452-2112d502f2ff
+az account set --subscription f161f906-7364-4800-a570-108277edf40f
+az synapse pipeline create-run --name Pl_airflow_synapse_test --workspace-name synw-dataanalytics-dataplatform-dev-westeurope-nr

@@ -15,7 +15,7 @@ default_args = {
 
 # Define your DAG
 dag = DAG(
-     'SG_trigger_synapse_pl',
+     'SG_trigger_synapse_pl_2',
      #template_searchpath="./scripts",
      default_args=default_args,
      schedule_interval=None, #Actived option to schedule @hourly, @daily etc

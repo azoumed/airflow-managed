@@ -14,7 +14,7 @@ default_args = {
 
 # Create the DAG
 dag = DAG(
-    'SG_trigger_adf_PL_Airflow_Test_2',
+    'SG_trigger_adf_PL_synaps_airflow',
     default_args=default_args,
     description='DAG to trigger an Azure Data Factory pipeline with parameter, send an email',
     schedule_interval=None,  # Set your desired schedule_interval

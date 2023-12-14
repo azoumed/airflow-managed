@@ -2,7 +2,6 @@ from airflow.providers.microsoft.azure.operators.data_factory import AzureDataFa
 from airflow.utils.dates import days_ago
 from datetime import timedelta
 
-
 # Define DAG configuration
 default_args = {
     'owner': 'Azouz',
@@ -11,7 +10,6 @@ default_args = {
     'retries': 1,
     'retry_delay': timedelta(minutes=5),
 }
-
 # Create the DAG
 dag = DAG(
     'SG_trigger_adf_PL_synaps_airflow',
@@ -20,8 +18,6 @@ dag = DAG(
     schedule_interval=None,  # Set your desired schedule_interval
     catchup=False,  # Disable catchup to prevent backfilling
 )
-
-
 # Task to trigger Azure Data Factory pipeline
 with dag:
   trigger_pipeline_task = AzureDataFactoryRunPipelineOperator(
@@ -33,6 +29,5 @@ with dag:
      pipeline_name='Pl_synapse_call',
      dag=dag,
 )
-
 # Define task dependencies
 trigger_pipeline_task

@@ -1,6 +1,4 @@
-from airflow import DAG
-#from airflow.providers.microsoft.azure.operators.data_factory import AzureDataFactoryRunPipelineOperator
-from airflow.providers.microsoft.azure.operators.synapse import AzureSynapseRunPipelineOperator
+from airflow.providers.microsoft.azure.operators.data_factory import AzureDataFactoryRunPipelineOperator
 from airflow.utils.dates import days_ago
 from datetime import timedelta
 
@@ -16,7 +14,7 @@ default_args = {
 
 # Create the DAG
 dag = DAG(
-    'SG_trigger_synaps_PL_1',
+    'SG_trigger_adf_PL_Airflow_Test_2',
     default_args=default_args,
     description='DAG to trigger an Azure Data Factory pipeline with parameter, send an email',
     schedule_interval=None,  # Set your desired schedule_interval
@@ -26,12 +24,13 @@ dag = DAG(
 
 # Task to trigger Azure Data Factory pipeline
 with dag:
-  trigger_pipeline_task = AzureSynapseRunPipelineOperator(
+  trigger_pipeline_task = AzureDataFactoryRunPipelineOperator(
      task_id='trigger_pipeline',
-     azure_synapse_workspace_dev_endpoint= 'azure_synapse_workspace_dev_endpoint',
-     azure_synapse_conn_id = 'azure_synapse_conn_1', # Define your Azure Data Factory credentials
+     resource_group_name='rg-dataanalytics-dataplatform-dev-westeurope-adf_shir',
+     factory_name='adf-dataanalytics-dataplatform-dev-westeurope-bm',
+     azure_data_factory_conn_id = "azure_data_factory_conn", # Define your Azure Data Factory credentials
      trigger_rule='all_success',
-     pipeline_name='Pl_airflow_synapse_test',
+     pipeline_name='Pl_synapse_call',
      dag=dag,
 )
 

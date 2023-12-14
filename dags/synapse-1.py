@@ -1,6 +1,7 @@
 from airflow.providers.microsoft.azure.operators.data_factory import AzureDataFactoryRunPipelineOperator
 from airflow.utils.dates import days_ago
 from datetime import timedelta
+from airflow import DAG
 
 # Define DAG configuration
 default_args = {
